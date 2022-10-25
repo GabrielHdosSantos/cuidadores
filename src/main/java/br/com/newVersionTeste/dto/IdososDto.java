@@ -9,5 +9,6 @@ public interface IdososDto {
     String getImage_Url();
     String getLink_whats();
     String getNome();
+    double getValor();
 
 }
