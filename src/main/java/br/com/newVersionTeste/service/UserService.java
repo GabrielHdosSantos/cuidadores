@@ -5,7 +5,9 @@ import br.com.newVersionTeste.dto.LoginResultDTO;
 import br.com.newVersionTeste.model.Cuidador;
 import br.com.newVersionTeste.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.transaction.Transactional;
 
@@ -17,10 +19,10 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-    public LoginResultDTO login(LoginDTO loginDTO){
+    public LoginResultDTO login(LoginDTO loginDTO) {
 
        var user= userRepository.findUserByUsernameAndPassword(loginDTO.username, loginDTO.password)
-                                     .orElseThrow(() -> new NullPointerException("As credenciais são não correspondem a nada na base de dados!"));
+               .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Credenciais inválidas!"));
 
        if(user instanceof Cuidador){
            return LoginResultDTO.builder().result("cuidador").data(user).build();
