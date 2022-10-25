@@ -19,7 +19,8 @@ public class UserService {
 
     public LoginResultDTO login(LoginDTO loginDTO){
 
-       var user= userRepository.findUserByUsernameAndPassword(loginDTO.username, loginDTO.password).get();
+       var user= userRepository.findUserByUsernameAndPassword(loginDTO.username, loginDTO.password)
+                                     .orElseThrow(() -> new NullPointerException("As credenciais são não correspondem a nada na base de dados!"));
 
        if(user instanceof Cuidador){
            return LoginResultDTO.builder().result("cuidador").data(user).build();
