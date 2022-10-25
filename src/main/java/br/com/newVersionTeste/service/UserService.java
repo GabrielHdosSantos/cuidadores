@@ -27,7 +27,6 @@ public class UserService {
        if(user instanceof Cuidador){
            return LoginResultDTO.builder().result("cuidador").data(user).build();
        }
-
         return LoginResultDTO.builder().result("idoso").data(user).build();
     }
 

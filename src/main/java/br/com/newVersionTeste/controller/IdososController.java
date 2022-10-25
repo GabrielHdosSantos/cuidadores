@@ -7,6 +7,7 @@ import br.com.newVersionTeste.model.Idoso;
 import br.com.newVersionTeste.repository.IdosoRepository;
 import br.com.newVersionTeste.service.IdososService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,10 +35,10 @@ public class IdososController {
         return ResponseEntity.ok("idoso atualizado com sucesso!");
     }
 
-    @GetMapping
-    public ResponseEntity<List<IdososDto>> findAllCuidadoresSearchingService(){
+    @GetMapping("{page}")
+    public ResponseEntity<Page<IdososDto>> findAllCuidadoresSearchingService(@PathVariable int page){
 
-        var data = idososService.findAllIdososProcurandoTrabalho();
+        var data = idososService.findAllIdososProcurandoTrabalho(page);
         return ResponseEntity.ok(data);
     }
 

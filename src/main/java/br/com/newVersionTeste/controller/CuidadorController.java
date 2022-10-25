@@ -4,6 +4,7 @@ import br.com.newVersionTeste.dto.CuidadorDto;
 import br.com.newVersionTeste.model.Cuidador;
 import br.com.newVersionTeste.service.CuidadorService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -30,10 +31,10 @@ public class CuidadorController {
         return ResponseEntity.ok("cuidador atualizado com sucesso!");
     }
 
-    @GetMapping
-    public ResponseEntity<List<CuidadorDto>> findAllCuidadoresSearchingService(){
+    @GetMapping("{page}")
+    public ResponseEntity<Page<CuidadorDto>> findAllCuidadoresSearchingService(@PathVariable int page){
 
-        var data = cuidadorService.findAllCuidadoresProcurandoTrabalho();
+        var data = cuidadorService.findAllCuidadoresProcurandoTrabalho(page);
         return ResponseEntity.ok(data);
     }
 
