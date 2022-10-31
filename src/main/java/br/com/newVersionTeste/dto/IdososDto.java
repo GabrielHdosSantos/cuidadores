@@ -1,5 +1,6 @@
 package br.com.newVersionTeste.dto;
 
+
 public interface IdososDto {
 
     Long getId();
@@ -10,5 +11,6 @@ public interface IdososDto {
     String getLink_whats();
     String getNome();
     double getValor();
+    String getCidade();
 
 }

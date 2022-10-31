@@ -31,10 +31,10 @@ public class CuidadorController {
         return ResponseEntity.ok("cuidador atualizado com sucesso!");
     }
 
-    @GetMapping("{page}")
-    public ResponseEntity<Page<CuidadorDto>> findAllCuidadoresSearchingService(@PathVariable int page){
+    @GetMapping("page/{page}/localidade/{cidade}")
+    public ResponseEntity<Page<CuidadorDto>> findAllCuidadoresSearchingService(@PathVariable int page, @PathVariable String cidade){
 
-        var data = cuidadorService.findAllCuidadoresProcurandoTrabalho(page);
+        var data = cuidadorService.findAllCuidadoresProcurandoTrabalho(page, cidade);
         return ResponseEntity.ok(data);
     }
 

@@ -1,20 +1,13 @@
 package br.com.newVersionTeste.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 import javax.persistence.*;
 
 
-@Getter
-@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "tb_users")
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class User {
 
     @Id

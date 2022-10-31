@@ -3,17 +3,12 @@ package br.com.newVersionTeste.model;
 import lombok.*;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Table(name = "tb_cuidadores")
 @Builder
+@Data
 public class Cuidador extends User{
 
     private String nome;
@@ -22,5 +17,6 @@ public class Cuidador extends User{
     private int idade;
     private boolean Searching;
     private String linkWhats;
+    private String cidade;
 
 }

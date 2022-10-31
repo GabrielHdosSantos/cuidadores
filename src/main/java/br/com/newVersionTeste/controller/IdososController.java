@@ -35,10 +35,10 @@ public class IdososController {
         return ResponseEntity.ok("idoso atualizado com sucesso!");
     }
 
-    @GetMapping("{page}")
-    public ResponseEntity<Page<IdososDto>> findAllCuidadoresSearchingService(@PathVariable int page){
+    @GetMapping("page/{page}/localidade/{cidade}")
+    public ResponseEntity<Page<Idoso>> findAllCuidadoresSearchingService(@PathVariable int page, @PathVariable String cidade){
 
-        var data = idososService.findAllIdososProcurandoTrabalho(page);
+        var data = idososService.findAllIdososProcurandoTrabalho(page, cidade);
         return ResponseEntity.ok(data);
     }
 

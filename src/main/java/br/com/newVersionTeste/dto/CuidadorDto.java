@@ -9,5 +9,6 @@ public interface CuidadorDto {
     String getImage_Url();
     String getLink_whats();
     String getNome();
+    String getCidade();
 
 }
