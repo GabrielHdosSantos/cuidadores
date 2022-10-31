@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Data
 @Table(name = "tb_idosos")
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Idoso extends User{
 
     private String nome;

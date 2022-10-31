@@ -9,6 +9,8 @@ import javax.persistence.Table;
 @Table(name = "tb_cuidadores")
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cuidador extends User{
 
     private String nome;

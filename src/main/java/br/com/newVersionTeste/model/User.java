@@ -8,6 +8,8 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "tb_users")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id

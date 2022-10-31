@@ -1,17 +1,12 @@
 package br.com.newVersionTeste.controller;
 
-import br.com.newVersionTeste.dto.CuidadorDto;
-import br.com.newVersionTeste.dto.IdososDto;
-import br.com.newVersionTeste.model.Cuidador;
 import br.com.newVersionTeste.model.Idoso;
-import br.com.newVersionTeste.repository.IdosoRepository;
 import br.com.newVersionTeste.service.IdososService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/idosos")
